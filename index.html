@@ -128,6 +128,30 @@
                 height: 120px;
             }
         }
+
+        /* フッターとコピーライトのスタイル */
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px 0;
+        font-size: 0.9em;
+        color: #777;
+        border-top: 1px solid #eee;
+    }
+    
+    .copyright {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+        footer {
+            margin-top: 30px;
+            padding: 15px 0;
+            font-size: 0.8em;
+        }
+    }
     </style>
     
     <!-- Google Analytics タグ -->
@@ -200,6 +224,14 @@
                 <!-- <li><a href="https://example.com/page3" target="_blank" rel="noopener noreferrer">大阪大学大学院工学研究科</a> - 電気電子情報工学専攻のページ</li> -->
             </ul>
         </div>
-    </div>
+    </div> <!-- ここがcontainerの終わりタグ -->
+    
+    <!-- フッターとコピーライト表記を追加 -->
+    <footer>
+        <div class="copyright">
+            &copy; <script>document.write(new Date().getFullYear());</script> Shun Tamura. All Rights Reserved.
+        </div>
+    </footer>
+
 </body>
 </html>
