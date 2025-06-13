@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あなたの名前 - ポートフォリオ</title>
+    <style>
+        :root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #0066cc;
+  /* 必要に応じて他の色変数を追加 */
+}
+
+[data-theme="dark"] {
+  --background-color: #222222;
+  --text-color: #eeeeee;
+  --link-color: #6699ff;
+  /* 同様に、ダークモードの色を定義 */
+}
+
+        /* 基本的なスタイル */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 0.8em;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* プロフィール写真 */
+        .profile-photo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 150px; /* 適宜調整 */
+            height: 150px; /* 適宜調整 */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ddd;
+        }
+
+        /* 連絡先アイコン（シンプルなテキストリンク） */
+        .contact-links a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.1em;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>あなたの名前</h1>
+
+        <img src="your-photo.jpg" alt="あなたの写真" class="profile-photo">
+
+        <p style=" font-size: 1.2em; font-weight: bold;">〇〇大学 〇〇学部 〇〇学科</p>
+        <p>自己紹介: レーダーに興味があります</p>
+
+        <h2>経歴</h2>
+        <ul>
+            <li>20XX年 4月 - 20YY年 3月: 〇〇大学 〇〇学部 〇〇学科 卒業</li>
+            <li>20YY年 4月 - 現在: 〇〇株式会社 勤務 / 〇〇大学大学院 〇〇研究科 在籍</li>
+            </ul>
+
+        <h2>業績</h2>
+        <h3>論文</h3>
+        <ul>
+            <li><a href="論文へのリンクURL" target="_blank" rel="noopener noreferrer">論文タイトル (著者名, 掲載誌, 発行年)</a></li>
+            <li><a href="論文へのリンクURL" target="_blank" rel="noopener noreferrer">別の論文タイトル (著者名, 掲載誌, 発行年)</a></li>
+            </ul>
+
+        <h3>発表</h3>
+        <ul>
+            <li><a href="発表資料へのリンクURL" target="_blank" rel="noopener noreferrer">発表タイトル (学会名, 発表年)</a></li>
+            <li><a href="発表資料へのリンクURL" target="_blank" rel="noopener noreferrer">別の発表タイトル (学会名, 発表年)</a></li>
+            </ul>
+
+        <h2>連絡先</h2>
+        <div class="contact-links">
+            <p>E-mail: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>X (旧Twitter): <a href="https://x.com/your_x_account" target="_blank" rel="noopener noreferrer">@your_x_account</a></p>
+            <p>Researchmap: <a href="https://researchmap.jp/your_researchmap_id" target="_blank" rel="noopener noreferrer">研究者ID または プロフィールURL</a></p>
+            </div>
+    </div>
+</body>
+</html>
