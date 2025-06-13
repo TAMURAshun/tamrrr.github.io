@@ -96,6 +96,37 @@
             font-size: 1.1em;
         }
 
+        /* 関連リンクのスタイル */
+    .link-section {
+        margin: 1.5em 0;
+    }
+    
+    .link-section ul {
+        padding-left: 10px;
+    }
+    
+    .link-section li {
+        margin-bottom: 1em;
+        position: relative;
+        padding-left: 20px;
+    }
+    
+    .link-section li:before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--link-color);
+    }
+    
+    .link-section a {
+        font-weight: 500;
+    }
+    
+    /* ダークモードでも見やすいように調整 */
+    [data-theme="dark"] .link-section li:before {
+        color: var(--link-color);
+    }
+
         /* スマホ対応 */
         @media (max-width: 600px) {
             body {
@@ -160,7 +191,18 @@
             <p>E-mail: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
             <p>X (旧Twitter): <a href="https://x.com/your_x_account" target="_blank" rel="noopener noreferrer">@your_x_account</a></p>
             <p>Researchmap: <a href="https://researchmap.jp/your_researchmap_id" target="_blank" rel="noopener noreferrer">研究者ID または プロフィールURL</a></p>
-            </div>
+        </div>
+        
+        <!-- 関連リンク欄を追加 -->
+        <h2>関連リンク</h2>
+        <div class="link-section">
+            <ul>
+                <li><a href="https://example.com/page1" target="_blank" rel="noopener noreferrer">気象レーダーとは</a> - 気象レーダーの基本原理と応用</li>
+                <li><a href="https://example.com/page2" target="_blank" rel="noopener noreferrer">研究室ウェブサイト</a> - 牛尾研究室の公式ウェブサイト</li>
+                <li><a href="https://example.com/page3" target="_blank" rel="noopener noreferrer">大阪大学大学院工学研究科</a> - 電気電子情報工学専攻のページ</li>
+                <li><a href="https://example.com/page4" target="_blank" rel="noopener noreferrer">日本気象学会</a> - 気象に関する学術団体</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
