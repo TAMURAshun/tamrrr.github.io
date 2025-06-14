@@ -157,6 +157,110 @@
             font-size: 0.8em;
         }
     }
+
+    /* ハンバーガーメニューのスタイル */
+    .hamburger-menu {
+        position: relative;
+        margin-top: 10px;
+    }
+    
+    #menu-toggle {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--text-color);
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+    
+    #menu-toggle:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    [data-theme="dark"] #menu-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0; /* 左からではなく右から配置するよう変更 */
+        background-color: var(--container-bg);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        padding: 10px;
+        min-width: 200px;
+        z-index: 1000;
+        display: none;
+        margin-top: 5px;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        padding-left: 0;
+    }
+    
+    .nav-menu a {
+        padding: 10px;
+        font-size: 1.1em;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+        .hamburger-menu {
+            display: flex;
+        }
+        
+        .nav-menu {
+            width: 100%;
+            top: 50px;
+            right: 0;
+        }
+    }
+
+    /* ダークモードボタンのスタイル */
+    #theme-toggle {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+        color: #fff; /* 白い月/太陽アイコン用 */
+    }
+    
+    /* ライトモード時のボタンスタイル（デフォルト） */
+    #theme-toggle {
+        background-color: #333;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    /* ダークモード時のボタンスタイル */
+    [data-theme="dark"] #theme-toggle {
+        background-color: #fff;
+        color: #333; /* 暗いアイコン色 */
+        box-shadow: 0 2px 5px rgba(255,255,255,0.2);
+    }
+    
+    #theme-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    
+    [data-theme="dark"] #theme-toggle:hover {
+        box-shadow: 0 3px 8px rgba(255,255,255,0.15);
+    }
+    
+    #theme-toggle:active {
+        transform: scale(0.95);
+    }
     </style>
     
     <!-- Google Analytics タグ -->
@@ -169,11 +273,25 @@
     </script>
 </head>
 <body>
-    <div style="text-align: right; max-width: 800px; margin: 0 auto;">
-        <button id="theme-toggle" style="padding: 8px 16px; border-radius: 5px; border: none; cursor: pointer; margin-top: 10px;">
-            🌙
-        </button>
+    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto;">
+    <button id="theme-toggle"></button>
+    
+    <div class="hamburger-menu">
+        <button id="menu-toggle">&#9776;</button>
+        <nav id="nav-menu" class="nav-menu">
+            <ul>
+                <li><a href="#education">学歴</a></li>
+                <li><a href="#hobbies">趣味・特技</a></li>
+                <li><a href="#career">経歴</a></li>
+                <li><a href="#scholarship">奨学金</a></li>
+                <li><a href="#qualification">資格</a></li>
+                <li><a href="#achievements">業績</a></li>
+                <li><a href="#contact">連絡先</a></li>
+                <li><a href="#related-links">関連リンク</a></li>
+            </ul>
+        </nav>
     </div>
+</div>
     
     <div class="container">
         <h1>田村駿のホームページ</h1>
@@ -183,7 +301,7 @@
         <p>大阪大学大学院工学研究科 電気電子情報工学専攻 センシングシステム領域 牛尾研究室 M2 の田村駿です</p>
         <p>気象レーダーに興味があります</p>
 
-        <h2>学歴</h2>
+        <h2 id="education">学歴</h2>
         <ul>
             <li>2013年 4月 - 2016年 3月: 神戸市立歌敷山中学校 </li>
             <li>2016年 4月 - 2019年 3月: 兵庫県立神戸高等学校 普通科 </li>
@@ -192,33 +310,34 @@
             <li>2024年 4月 - 大阪大学大学院 工学研究科 </li>
             <li>2024年 9月 - 超域イノベーション博士課程プログラム Basicコース 本履修生</li>
             </ul>
-        <h2>趣味・特技</h2>
+        <h2 id="hobbies">趣味・特技</h2>
         <ul>
             <li>剣道部（中・高）</li>
             <li>囲碁部（大）</li>
             <li>SF研究会（大）</li>
             <li>最近ピアノを習い始めた</li>
             </ul>
-        <h2>経歴</h2>
+        <h2 id="career">経歴</h2>
         <ul>
             <li>2021年 4月 - 大阪大学国際医工情報センター 技術補佐員</li>
             <li>2024年 9月 - 超域イノベーション博士課程プログラム Basicコース 本履修生</li>
             </ul>
-        <h2>奨学金</h2>
+        <h2 id="scholarship">奨学金</h2>
         <ul>
             <li>2021年 9月 - 2024年 3月: 村尾育英会（給付）</li>
             <li>2024年 4月 - 2025年 3月: 似鳥国際奨学財団 IT人材（給付）</li>
             <li>2024年 4月 - : 第一種奨学金（貸与）</li>
             <li>2025年 4月 - : アイコム電子通信工学財団（給付）</li>
             </ul>
-        <h2>資格</h2>
+        <h2 id="qualification">資格</h2>
         <ul>
             <li>2015年 7月: 第四級アマチュア無線技士</li>
             <li>2018年 6月: 剣道三段</li>
+            <li>2020年 10月: 普通自動車第一種運転免許（AT限定）</li>
             <li>2023年 6月: 第一級陸上特殊無線技士</li>
             </ul>
 
-        <h2>業績</h2>
+        <h2 id="achievements">業績</h2>
         <!-- <h3>論文</h3>
         <ul>
             <li><a href="論文へのリンクURL" target="_blank" rel="noopener noreferrer">論文タイトル (著者名, 掲載誌, 発行年)</a></li>
@@ -232,7 +351,7 @@
             <!-- <li><a href="発表資料へのリンクURL" target="_blank" rel="noopener noreferrer">別の発表タイトル (学会名, 発表年)</a></li> -->
             </ul>
 
-        <h2>連絡先</h2>
+        <h2 id="contact">連絡先</h2>
         <div class="contact-links">
             <p>E-mail: tamura(at)se.eei.eng.osaka-u.ac.jp</p>
             <!-- <p>X (旧Twitter): <a href="https://x.com/your_x_account" target="_blank" rel="noopener noreferrer">@your_x_account</a></p> -->
@@ -240,7 +359,7 @@
         </div>
         
         <!-- 関連リンク欄を追加 -->
-        <h2>関連リンク</h2>
+        <h2 id="related-links">関連リンク</h2>
         <div class="link-section">
             <ul>
                 <li><a href="https://researchmap.jp/shun_tamtam" target="_blank" rel="noopener noreferrer">Researchmap</a> - マイポータル</li>
@@ -270,7 +389,9 @@
         // 初期テーマを適用
         if (currentTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
-            themeToggleBtn.innerHTML = '';
+            themeToggleBtn.innerHTML = '☼'; // 太陽アイコン
+        } else {
+            themeToggleBtn.innerHTML = '☽'; // 月アイコン
         }
         
         // ボタンクリックでテーマ切替
@@ -280,12 +401,22 @@
             if (theme === 'dark') {
                 document.body.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'light');
-                this.innerHTML = '';
+                this.innerHTML = '☽'; // 月アイコン
             } else {
                 document.body.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                this.innerHTML = '';
+                this.innerHTML = '☼'; // 太陽アイコン
             }
+        });
+        
+        // ハンバーガーメニューの機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggleBtn = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            menuToggleBtn.addEventListener('click', function() {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            });
         });
     </script>
 </body>
