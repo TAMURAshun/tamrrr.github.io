@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShunTamuraのホームページ</title>
     <style>
-        :root {
-  --background-color: #ffffff;
-  --text-color: #333333;
-  --link-color: #0066cc;
-  /* 必要に応じて他の色変数を追加 */
-}
+    :root {
+        --background-color: #ffffff;
+        --text-color: #333333;
+        --link-color: #0066cc;
+        --container-bg: #ffffff;
+        --heading-color: #2c3e50;
+        --border-color: #eee;
+    }
 
-[data-theme="dark"] {
-  --background-color: #222222;
-  --text-color: #eeeeee;
-  --link-color: #6699ff;
-  /* 同様に、ダークモードの色を定義 */
-}
+    [data-theme="dark"] {
+        --background-color: #222222;
+        --text-color: #eeeeee;
+        --link-color: #6699ff;
+        --container-bg: #333333;
+        --heading-color: #cccccc;
+        --border-color: #444;
+    }
 
         /* 基本的なスタイル */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4; /* 1.6から1.4に変更して行間を詰める */
             margin: 0;
             padding: 20px;
             background-color: var(--background-color);
@@ -33,17 +37,18 @@
         .container {
             max-width: 800px;
             margin: 20px auto;
-            background: #fff;
+            background: var(--container-bg);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         h1, h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #eee;
+            color: var(--heading-color);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 10px;
-            margin-top: 30px;
+            margin-top: 25px; /* 30pxから25pxに変更 */
+            margin-bottom: 15px; /* 適宜調整 */
         }
 
         h1 {
@@ -57,7 +62,7 @@
         }
 
         p {
-            margin-bottom: 1em;
+            margin-bottom: 0.8em; /* 1emから0.8emに変更 */
         }
 
         ul {
@@ -66,7 +71,7 @@
         }
 
         ul li {
-            margin-bottom: 0.8em;
+            margin-bottom: 0.6em; /* 0.8emから0.6emに変更 */
         }
 
         a {
@@ -135,8 +140,8 @@
         margin-top: 40px;
         padding: 20px 0;
         font-size: 0.9em;
-        color: #777;
-        border-top: 1px solid #eee;
+        color: var(--text-color);
+        border-top: 1px solid var(--border-color);
     }
     
     .copyright {
@@ -164,21 +169,39 @@
     </script>
 </head>
 <body>
+    <div style="text-align: right; max-width: 800px; margin: 0 auto;">
+        <button id="theme-toggle" style="padding: 8px 16px; border-radius: 5px; border: none; cursor: pointer; margin-top: 10px;">
+            🌙
+        </button>
+    </div>
+    
     <div class="container">
         <h1>田村駿のホームページ</h1>
 
-        <img src="your-photo.jpg" alt="あなたの写真" class="profile-photo">
+        <img src="your-photo.jpg" alt="　　工事中" class="profile-photo">
 
-        <p>大阪大学大学院工学研究科 電気電子情報工学専攻 センシングシステム領域 牛尾研究室</p>
-        <p>博士前期課程２年</p>
+        <p>大阪大学大学院工学研究科 電気電子情報工学専攻 センシングシステム領域 牛尾研究室 M2 の田村駿です</p>
         <p>気象レーダーに興味があります</p>
 
-        <h2>経歴</h2>
+        <h2>学歴</h2>
         <ul>
-            <li>2016年 4月 - 2019年 3月: 兵庫県立 神戸高等学校 普通科 </li>
+            <li>2013年 4月 - 2016年 3月: 神戸市立歌敷山中学校 </li>
+            <li>2016年 4月 - 2019年 3月: 兵庫県立神戸高等学校 普通科 </li>
             <li>2019年 4月 - 2020年 3月: 駿台神戸校 SAクラス</li>
             <li>2020年 4月 - 2024年 3月: 大阪大学 工学部 電子情報工学科 </li>
             <li>2024年 4月 - 大阪大学大学院 工学研究科 </li>
+            <li>2024年 9月 - 超域イノベーション博士課程プログラム Basicコース 本履修生</li>
+            </ul>
+        <h2>趣味・特技</h2>
+        <ul>
+            <li>剣道部（中・高）</li>
+            <li>囲碁部（大）</li>
+            <li>SF研究会（大）</li>
+            <li>最近ピアノを習い始めた</li>
+            </ul>
+        <h2>経歴</h2>
+        <ul>
+            <li>2021年 4月 - 大阪大学国際医工情報センター 技術補佐員</li>
             <li>2024年 9月 - 超域イノベーション博士課程プログラム Basicコース 本履修生</li>
             </ul>
         <h2>奨学金</h2>
@@ -234,5 +257,36 @@
         </div>
     </footer>
 
+    <script>
+        // テーマ切替機能
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // ローカルストレージからテーマ設定を取得するか、
+        // システム設定に基づいてデフォルトを設定
+        const currentTheme = localStorage.getItem('theme') || 
+            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        // 初期テーマを適用
+        if (currentTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeToggleBtn.innerHTML = '';
+        }
+        
+        // ボタンクリックでテーマ切替
+        themeToggleBtn.addEventListener('click', function() {
+            let theme = document.body.getAttribute('data-theme');
+            
+            if (theme === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                this.innerHTML = '';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                this.innerHTML = '';
+            }
+        });
+    </script>
 </body>
 </html>
