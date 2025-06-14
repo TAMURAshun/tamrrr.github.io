@@ -134,31 +134,41 @@
             }
         }
 
-        /* フッターとコピーライトのスタイル */
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        padding: 20px 0;
-        font-size: 0.9em;
-        color: var(--text-color);
-        border-top: 1px solid var(--border-color);
-    }
-    
-    .copyright {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    /* スマホ対応 */
-    @media (max-width: 600px) {
+        /* フッターとコピーライトのスタイル修正 */
         footer {
-            margin-top: 30px;
-            padding: 15px 0;
-            font-size: 0.8em;
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
         }
-    }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .copyright {
+            text-align: left;
+        }
+        
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .copyright {
+                text-align: center;
+            }
+        }
 
-    /* ハンバーガーメニューのスタイル */
+        /* ハンバーガーメニューのスタイル */
     .hamburger-menu {
         position: relative;
         margin-top: 10px;
@@ -273,25 +283,23 @@
     </script>
 </head>
 <body>
-    <div style="display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto;">
-    <button id="theme-toggle"></button>
-    
-    <div class="hamburger-menu">
-        <button id="menu-toggle">&#9776;</button>
-        <nav id="nav-menu" class="nav-menu">
-            <ul>
-                <li><a href="#education">学歴</a></li>
-                <li><a href="#hobbies">趣味・特技</a></li>
-                <li><a href="#career">経歴</a></li>
-                <li><a href="#scholarship">奨学金</a></li>
-                <li><a href="#qualification">資格</a></li>
-                <li><a href="#achievements">業績</a></li>
-                <li><a href="#contact">連絡先</a></li>
-                <li><a href="#related-links">関連リンク</a></li>
-            </ul>
-        </nav>
+    <div style="display: flex; justify-content: flex-end; align-items: center; max-width: 800px; margin: 0 auto;">
+        <div class="hamburger-menu">
+            <button id="menu-toggle">&#9776;</button>
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="#education">学歴</a></li>
+                    <li><a href="#hobbies">趣味・特技</a></li>
+                    <li><a href="#career">経歴</a></li>
+                    <li><a href="#scholarship">奨学金</a></li>
+                    <li><a href="#qualification">資格</a></li>
+                    <li><a href="#achievements">業績</a></li>
+                    <li><a href="#contact">連絡先</a></li>
+                    <li><a href="#related-links">関連リンク</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
     
     <div class="container">
         <h1>田村駿のホームページ</h1>
@@ -334,6 +342,7 @@
             <li>2015年 7月: 第四級アマチュア無線技士</li>
             <li>2018年 6月: 剣道三段</li>
             <li>2020年 10月: 普通自動車第一種運転免許（AT限定）</li>
+            <li>2023年 4月: TOEIC 880点</li>
             <li>2023年 6月: 第一級陸上特殊無線技士</li>
             </ul>
 
@@ -369,10 +378,13 @@
         </div>
     </div> <!-- ここがcontainerの終わりタグ -->
     
-    <!-- フッターとコピーライト表記を追加 -->
+    <!-- フッターとコピーライトおよびダークモードボタンを追加 -->
     <footer>
-        <div class="copyright">
-            &copy; <script>document.write(new Date().getFullYear());</script> Shun Tamura. All Rights Reserved.
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear());</script> Shun Tamura. All Rights Reserved.
+            </div>
+            <button id="theme-toggle"></button>
         </div>
     </footer>
 
