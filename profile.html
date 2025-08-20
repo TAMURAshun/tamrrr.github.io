@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロフィール - ShunTamuraのホームページ</title>
+    <style>
+    :root {
+        --background-color: #ffffff;
+        --text-color: #333333;
+        --link-color: #0066cc;
+        --container-bg: #ffffff;
+        --heading-color: #2c3e50;
+        --border-color: #eee;
+    }
+
+    [data-theme="dark"] {
+        --background-color: #222222;
+        --text-color: #eeeeee;
+        --link-color: #6699ff;
+        --container-bg: #333333;
+        --heading-color: #cccccc;
+        --border-color: #444;
+    }
+
+    /* 基本的なスタイル */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.4;
+        margin: 0;
+        padding: 20px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: var(--container-bg);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    h1, h2 {
+        color: var(--heading-color);
+        border-bottom: 2px solid var(--border-color);
+        padding-bottom: 10px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        margin-bottom: 0.8em;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        margin-bottom: 0.6em;
+    }
+
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* ナビゲーションリンク */
+    .nav-link {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        background-color: var(--link-color);
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .nav-link:hover {
+        background-color: var(--heading-color);
+        text-decoration: none;
+    }
+
+    /* フッタースタイル */
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px 0;
+        font-size: 0.9em;
+        color: var(--text-color);
+        border-top: 1px solid var(--border-color);
+    }
+
+    .footer-content {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+
+    /* ダークモードボタンのスタイル */
+    #theme-toggle {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+        color: #fff;
+        background-color: #333;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    [data-theme="dark"] #theme-toggle {
+        background-color: #fff;
+        color: #333;
+        box-shadow: 0 2px 5px rgba(255,255,255,0.2);
+    }
+
+    #theme-toggle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    [data-theme="dark"] #theme-toggle:hover {
+        box-shadow: 0 3px 8px rgba(255,255,255,0.15);
+    }
+
+    #theme-toggle:active {
+        transform: scale(0.95);
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+        body {
+            padding: 10px;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        .footer-content {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .copyright {
+            text-align: center;
+        }
+    }
+    
+    /* 招待講演の強調表示 */
+    .invited-talk {
+        font-weight: bold;
+        color: var(--text-color); /* リンク色から通常の文字色に変更 */
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-link">← ホームに戻る</a>
+        
+        <h1>プロフィール</h1>
+
+        <h2>趣味・特技</h2>
+        <ul>
+            <li>剣道部（中・高）</li>
+            <li>囲碁部（大）</li>
+            <li>SF研究会（大）</li>
+            <li>最近ピアノを習い始めた</li>
+        </ul>
+
+        <h2>学歴</h2>
+        <ul>
+            <li>2013年 4月 - 2016年 3月: 神戸市立歌敷山中学校</li>
+            <li>2016年 4月 - 2019年 3月: 兵庫県立神戸高等学校 普通科</li>
+            <li>2019年 4月 - 2020年 3月: 駿台神戸校 SAクラス</li>
+            <li>2020年 4月 - 2024年 3月: 大阪大学 工学部 電子情報工学科</li>
+            <li>2024年 4月 - 大阪大学大学院 工学研究科</li>
+            <li>2024年 9月 - 超域イノベーション博士課程プログラム Basicコース 本履修生</li>
+        </ul>
+
+        <h2>経歴</h2>
+        <ul>
+            <li>2021年 4月 - 大阪大学国際医工情報センター 技術補佐員</li>
+            <li>2024年 9月 - 超域イノベーション博士課程プログラム Basicコース 本履修生</li>
+        </ul>
+
+        <h2>奨学金</h2>
+        <ul>
+            <li>2021年 9月 - 2024年 3月: 村尾育英会（給付）</li>
+            <li>2024年 4月 - 2025年 3月: 似鳥国際奨学財団 IT人材（給付）</li>
+            <li>2024年 4月 - : 第一種奨学金（貸与）</li>
+            <li>2025年 4月 - : アイコム電子通信工学財団（給付）</li>
+        </ul>
+
+        <h2>資格</h2>
+        <ul>
+            <li>2015年 7月: 第四級アマチュア無線技士</li>
+            <li>2018年 6月: 剣道三段</li>
+            <li>2020年 10月: 普通自動車第一種運転免許（AT限定）</li>
+            <li>2023年 4月: TOEIC 880点</li>
+            <li>2023年 6月: 第一級陸上特殊無線技士</li>
+        </ul>
+
+        <h2 id="achievements">業績</h2>
+        <h3>発表</h3>
+        <ul>
+            <li>*田村駿, 和田有希, 佐藤晋介, 花土弘, 牛尾知雄: フェーズドアレイ気象レーダ２台によるバイスタティック観測, 
+                JpGU 2025, 幕張メッセ（千葉）, 2025年5月25日-30日（口頭, <span class="invited-talk">招待講演</span>, 2025年5月26日）</li>
+        </ul>
+        <h3 id="awards">受賞</h3>
+        <ul>
+            <li>JpGU 2025 大気水圏科学セクション 学生優秀発表賞
+                「フェーズドアレイ気象レーダ２台によるバイスタティック観測」</li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; <script>document.write(new Date().getFullYear());</script> Shun Tamura. All Rights Reserved.
+            </div>
+            <button id="theme-toggle"></button>
+        </div>
+    </footer>
+
+    <script>
+        // テーマ切替機能
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        const currentTheme = localStorage.getItem('theme') || 
+            (prefersDarkScheme.matches ? 'dark' : 'light');
+        
+        if (currentTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeToggleBtn.innerHTML = '☼';
+        } else {
+            themeToggleBtn.innerHTML = '☽';
+        }
+        
+        themeToggleBtn.addEventListener('click', function() {
+            let theme = document.body.getAttribute('data-theme');
+            
+            if (theme === 'dark') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                this.innerHTML = '☽';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                this.innerHTML = '☼';
+            }
+        });
+    </script>
+</body>
+</html>
