@@ -16,7 +16,7 @@ const blogPosts = [
         date: '2025年8月20日',
         dateObj: new Date('2025-08-20'),
         content: `
-            <p><a href="profile.html#achievements" target="_blank" rel="noopener noreferrer">
+            <p><a href="profile.html#awards" target="_blank" rel="noopener noreferrer">
             JpGU 2025の大気水圏科学セクションで学生優秀発表賞</a>を受賞しました。</p>
         `
     },
@@ -37,6 +37,16 @@ const blogPosts = [
         dateObj: new Date('2025-11-14'),
         content: `
             <p>秋季気象学会で口頭発表しました。</p>
+        `
+    },
+    {
+        id: 'post-5',
+        title: '秋季気象学会で松野賞を受賞しました',
+        date: '2025年12月12日',
+        dateObj: new Date('2025-12-12'),
+        content: `
+            <p><a href="profile.html#awards" target="_blank" rel="noopener noreferrer">
+            秋季気象学会で松野賞</a>を受賞しました。</p>
         `
     }
 ];
