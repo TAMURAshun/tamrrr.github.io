@@ -48,6 +48,15 @@ const blogPosts = [
             <p><a href="profile.html#awards" target="_blank" rel="noopener noreferrer">
             秋季気象学会で松野賞</a>を受賞しました。</p>
         `
+    },
+        {
+        id: 'post-6',
+        title: '日本大気電気学会で発表しました',
+        date: '2026年1月8日',
+        dateObj: new Date('2026-01-08'),
+        content: `
+            <p>日本大気電気学会でポスター発表しました。今年度の学会はこれで最後です</p>
+        `
     }
 ];
 
